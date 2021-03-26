@@ -4,4 +4,63 @@
       <h2>Loading</h2>
   </div>  
 </div>
-<canvas #canvas class="play-ground"></canvas>
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-6 px-1">
+      <canvas #canvas class="play-ground"></canvas>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="controls-wrapper">
+        <div class="controls">
+          <div class="control">
+            <div class="up">
+              <button class="btn" (click)="btnClicks('up')" (tap)="btnClicks('up')"><i class="fa fa-arrow-circle-up"></i></button>
+            </div>
+          </div>
+          <div class="control">
+            <div class="side">
+              <button class="btn" (click)="btnClicks('left')" (tap)="btnClicks('left')"><i class="fa fa-arrow-circle-left"></i></button>
+              <button class="btn" (click)="btnClicks('right')" (tap)="btnClicks('right')"><i class="fa fa-arrow-circle-right"></i></button>
+            </div>
+          </div>
+          <div class="control">
+            <div class="down">
+              <button class="btn" (click)="btnClicks('down')" (tap)="btnClicks('down')"><i class="fa fa-arrow-circle-down"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container">
+  <div class="canvas-wrapper row">
+    <div class="col-md-4">
+      <canvas #canvas class="play-ground"></canvas>
+    </div>
+    <div class="controls-wrapper">
+      <div class="controls">
+        <div class="control">
+          <div class="up">
+            <button class="btn"><i class="fa fa-arrow-circle-up"></i></button>
+          </div>
+        </div>
+        <div class="control">
+          <div class="side">
+            <button class="btn"><i class="fa fa-arrow-circle-left"></i></button>
+            <button class="btn"><i class="fa fa-arrow-circle-right"></i></button>
+          </div>
+        </div>
+        <div class="control">
+          <div class="down">
+            <button class="btn"><i class="fa fa-arrow-circle-down"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

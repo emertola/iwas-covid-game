@@ -30,8 +30,50 @@
   
 
 .play-ground{
-  display: grid;
-  margin: auto;
+  // display: grid;
+  // margin: auto;
+  width: 100%;
+  height: auto;
   background-color: #ddd;
 }
+
+.btn {
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 4px 6px; /* Some padding */
+  font-size: 32px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+.controls-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  .controls {
+    background-color: lightblue;
+    max-width: max-content;
+    
+    .control {
+      .up,
+      .down {
+        display: flex;
+        justify-content: center;
+      }
+  
+      .side {
+        display: flex;
+        justify-content: space-between;
+        width: 145px;
+      }
+    }
+  }
+}
+
 

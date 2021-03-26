@@ -2,6 +2,7 @@ import { Injectable, Input } from '@angular/core';
 import { Obstacles } from '../interfaces/obstacles';
 import { PlayerPosition } from '../interfaces/player-position';
 import { SingleObstacles } from '../interfaces/single-obstacle';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 import * as CONFIG from './../config/config';
 
@@ -26,6 +27,8 @@ export class GameService {
 	moveDown = false;
 	moveLeft = false;
 	moveRight = false;
+
+  avoided = 0;
 
 	loadAssets(canvasElement: HTMLCanvasElement): Promise<void>  {
 		this.context = canvasElement.getContext('2d');
@@ -162,8 +165,28 @@ export class GameService {
 		) {
 			clearInterval(this.gameLoop);
 			// alert('Game Over');
+      Swal.fire({
+        title: 'Positive!',
+        text: `You've been infected with the virus.`,
+        allowOutsideClick: false,
+        allowEnterKey: false,
+        showCancelButton: true,
+        confirmButtonText: 'Retry',
+        cancelButtonText: 'Exit',
+        imageUrl: 'assets/virus-1.png'
+      }).then(result => {
+        if (result.value) {
+          window.location.reload();
+        } else if (result.isDismissed) {
+          console.log('end game');
+        }
+      });
+      // Swal.fire(`Positive!`, `You've been infected with the COVID-19 virus.`, 'error')
+      //   .then(result => console.log(result));
 			// window.location.reload();
-		}
+		} else {
+      // console.log(this.avoided += 1);
+    }
 	}
 
 	cleanGround(): void {

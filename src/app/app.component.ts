@@ -9,7 +9,7 @@ import { GameService } from './services/game.service';
 })
 export class AppComponent implements AfterViewInit {
   // title = 'iwas-covid-game';
-  @ViewChild('canvas', { static: false }) public canvas: ElementRef;
+  @ViewChild('canvas') canvas: ElementRef;
   subscription: any;
   showLoader = true;
 
@@ -35,4 +35,9 @@ export class AppComponent implements AfterViewInit {
 	@HostListener('document:keyup', ['$event']) onKeyupHandler(event: KeyboardEvent) {
 		this.appService.movePlayer(event, 'keyup');
 	}
+
+  btnClicks(dir: string) {
+    console.log(dir)
+    this.appService.movePlayerByClicks(dir);
+  }
 }
