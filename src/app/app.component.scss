@@ -33,7 +33,7 @@
   // display: grid;
   // margin: auto;
   width: 100%;
-  height: auto;
+  height: 680px;
   background-color: #ddd;
 }
 
@@ -41,7 +41,7 @@
   background-color: DodgerBlue; /* Blue background */
   border: none; /* Remove borders */
   color: white; /* White text */
-  padding: 4px 6px; /* Some padding */
+  padding: 2px 6px; /* Some padding */
   font-size: 32px; /* Set a font size */
   cursor: pointer; /* Mouse pointer on hover */
 }
@@ -59,6 +59,7 @@
   .controls {
     background-color: lightblue;
     max-width: max-content;
+    opacity: 0.8;
     
     .control {
       .up,

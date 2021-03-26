@@ -28,7 +28,7 @@ export class GameService {
 	moveLeft = false;
 	moveRight = false;
 
-  avoided = 0;
+  score = 0;
 
 	loadAssets(canvasElement: HTMLCanvasElement): Promise<void>  {
 		this.context = canvasElement.getContext('2d');
@@ -50,7 +50,7 @@ export class GameService {
 			this.createObstacles();
 			this.moveObstacles();
 			this.createPlayer();
-		}, 10);
+		}, 8);
 	}
 
 	animationFrame(n: number): boolean {
@@ -95,7 +95,7 @@ export class GameService {
 
 	moveObstacles(): void {
 		this.obstacles.forEach((element: Obstacles, index: number) => {
-			element.y += 3;
+			element.y += 4.5;
 			element.update();
 			this.detectCrash(element);
 			if (element.y > this.height) {
@@ -167,7 +167,8 @@ export class GameService {
 			// alert('Game Over');
       Swal.fire({
         title: 'Positive!',
-        text: `You've been infected with the virus.`,
+        html: `You've been infected with the virus.<br><br>
+        <strong>Score:</strong> ${this.score}`,
         allowOutsideClick: false,
         allowEnterKey: false,
         showCancelButton: true,
@@ -178,11 +179,11 @@ export class GameService {
         if (result.value) {
           window.location.reload();
         } else if (result.isDismissed) {
-          console.log('end game');
+          window.location.href = 'http://google.com';
         }
       });
 		} else {
-      // console.log(this.avoided += 1);
+      this.score += 1;
     }
 	}
 

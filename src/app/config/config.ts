@@ -55,4 +55,20 @@ export const viruses = [
     width: 100,
     height: 100,
   },
+  {
+    sX: 304,
+    sY: 20,
+    sWidth: 112,
+    sHeight: 113,
+    width: 110,
+    height: 111,
+  },
+  {
+    sX: 361,
+    sY: 191,
+    sWidth: 116,
+    sHeight: 118,
+    width: 114,
+    height: 116,
+  },
 ]
