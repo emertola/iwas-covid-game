@@ -181,9 +181,6 @@ export class GameService {
           console.log('end game');
         }
       });
-      // Swal.fire(`Positive!`, `You've been infected with the COVID-19 virus.`, 'error')
-      //   .then(result => console.log(result));
-			// window.location.reload();
 		} else {
       // console.log(this.avoided += 1);
     }
