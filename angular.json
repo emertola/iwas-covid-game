@@ -117,8 +117,13 @@
               "devServerTarget": "iwas-covid-game:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "iwas-covid-game"
 }
